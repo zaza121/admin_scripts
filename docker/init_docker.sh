@@ -11,7 +11,7 @@ sudo apt-get -y install python-pip python-dev build-essential
 sudo pip install --upgrade pip
 
 # installation de docker
-sudo apt-get install \
+sudo apt-get -y install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -22,7 +22,7 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 sudo apt-get update
-sudo apt-get install docker-ce
+sudo apt-get -y install docker-ce
 sudo usermod -aG docker $(whoami)
 
 # installation de docker-compose
