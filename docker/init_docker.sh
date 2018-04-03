@@ -1,22 +1,28 @@
 #!/bin/bash
 
-# mise a jour
+# Mise a jour
 sudo apt-get update
 
-# installation de curl
+# Installation de curl
 sudo apt-get install curl
 
-# installation de pip
+# Installation de pip
 sudo apt-get install python-pip python-dev build-essential
 sudo pip install --upgrade pip
 
-#installation de oh my zsh
+# Installation de oh my zsh
 sudo apt-get install zsh
 sudo apt-get install git-core
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# installation de docker
+
+# Installation de docker
 sudo wget -qO- https://get.docker.com/ | sh
 sudo usermod -aG docker $(whoami)
 
-# installation de docker-compose
+# Installation de docker-compose
 sudo pip install docker-compose
+
+# Permet d'exécuter les commandes docker sans sudo
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
